@@ -13,6 +13,9 @@ import retrofit2.Response
 class RetrofitMainActivity : AppCompatActivity() {
     lateinit var adapter: NewsAdapter
     lateinit var newsList: RecyclerView
+    
+    var pageNum = 1
+    var totalResults = -1
 
     companion object {
         const val TAG: String = "retrofit"
@@ -26,7 +29,7 @@ class RetrofitMainActivity : AppCompatActivity() {
     }
 
     private fun getNews() {
-        val news = NewsService.newsInstance.getHeadlines("in", 1)
+        val news = NewsService.newsInstance.getHeadlines("in", pageNum)
 
         news.enqueue(object : Callback<News> {
             override fun onResponse(call: Call<News>, response: Response<News>) {
@@ -35,6 +38,8 @@ class RetrofitMainActivity : AppCompatActivity() {
                 if (news != null) {
                     Log.d(TAG, "onResponse: " + news.toString())
 
+                    totalResults = news.totalResults
+                    Log.d(TAG, "onResponse: "+totalResults.toString())
                     adapter = NewsAdapter(this@RetrofitMainActivity, news.articles)
                     newsList.adapter = adapter
                     newsList.layoutManager = LinearLayoutManager(this@RetrofitMainActivity)
