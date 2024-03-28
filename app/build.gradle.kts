@@ -52,6 +52,11 @@ dependencies {
     // Add Dagger-Hilt dependencies
     implementation("com.google.dagger:hilt-android:2.48")
     kapt("com.google.dagger:hilt-android-compiler:2.44")
+//  Retrofit Dependency
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+//    Glide Dependency
+    implementation ("com.github.bumptech.glide:glide:4.16.0")
 }
 
 kapt {
