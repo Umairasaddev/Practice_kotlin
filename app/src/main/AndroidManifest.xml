@@ -16,6 +16,12 @@
         android:theme="@style/Theme.RecyclerView"
         tools:targetApi="31">
         <activity
+            android:name="com.example.LiveData.LiveDataActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.Retrofit.RetrofitMainActivity"
+            android:exported="false" />
+        <activity
             android:name="com.example.Retrofit.NewsDetailActivity"
             android:exported="false" />
         <activity
@@ -34,7 +40,8 @@
             android:name="com.example.ViewPager.ViewPagerActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.Retrofit.RetrofitMainActivity"
+
+            android:name="com.example.MVVM.Activity.MainActivityMvvm"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

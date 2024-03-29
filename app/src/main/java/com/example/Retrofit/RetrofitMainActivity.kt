@@ -13,7 +13,7 @@ import retrofit2.Response
 class RetrofitMainActivity : AppCompatActivity() {
     lateinit var adapter: NewsAdapter
     lateinit var newsList: RecyclerView
-    
+
     var pageNum = 1
     var totalResults = -1
 
@@ -39,7 +39,7 @@ class RetrofitMainActivity : AppCompatActivity() {
                     Log.d(TAG, "onResponse: " + news.toString())
 
                     totalResults = news.totalResults
-                    Log.d(TAG, "onResponse: "+totalResults.toString())
+                    Log.d(TAG, "onResponse: " + totalResults.toString())
                     adapter = NewsAdapter(this@RetrofitMainActivity, news.articles)
                     newsList.adapter = adapter
                     newsList.layoutManager = LinearLayoutManager(this@RetrofitMainActivity)
