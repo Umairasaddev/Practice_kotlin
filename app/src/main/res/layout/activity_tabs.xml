@@ -11,7 +11,7 @@
         android:layout_width="0dp"
         android:layout_height="50dp"
         app:tabMode="fixed"
-
+        app:tabIndicatorFullWidth="true"
         app:tabIndicatorGravity="stretch"
         app:tabIndicatorAnimationMode="elastic"
         app:tabSelectedTextColor="@color/white"
